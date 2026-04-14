@@ -1,7 +1,11 @@
+import Banner from "@/components/Banner/Banner";
+import Friends from "@/components/Friends/Friends";
+
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold underline text-cyan-500">
-      Hello world!
-    </h1>
+    <div>
+      <Banner />
+      <Friends />
+    </div>
   );
 }

@@ -9,20 +9,20 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { text: "Home", path: "/home", icon: <IoHomeOutline /> },
+    { text: "Home", path: "/", icon: <IoHomeOutline /> },
     { text: "Timeline", path: "/timeline", icon: <IoTimerOutline /> },
     { text: "Status", path: "/status", icon: <FaChartLine /> },
   ];
 
   return (
     <nav className="w-full bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14">
+      <div className=" px-2 md:w-[93%] mx-auto flex items-center justify-between py-3 text-[#244D3F]">
         {/* Brand */}
         <Link
           href="/"
-          className="text-lg font-semibold text-gray-900 tracking-tight select-none"
+          className="text-xl font-semibold text-gray-900 tracking-tight select-none"
         >
-          <span className="font-black">Keen</span>Keeper
+          <span className="font-bold text-[#244D3F]">Keen</span>Keeper
         </Link>
 
         {/* Nav Links */}
@@ -31,10 +31,9 @@ const Navbar = () => {
             <Link
               key={link.path}
               href={link.path}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+              className={`flex items-center gap-1.5 px-2 md:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
                 ${
-                  pathname === link.path ||
-                  (pathname === "/" && link.path === "/home")
+                  pathname === link.path
                     ? "bg-teal-800 text-white"
                     : "text-gray-600 hover:text-gray-900"
                 }`}

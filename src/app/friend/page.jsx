@@ -24,6 +24,32 @@ const Friend = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
+
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
+            <h2 className="text-xl font-medium">{friends.length}</h2>
+            <p className="text-xs text-gray-400">Total Friends</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
+            <h2 className="text-xl font-medium">3</h2>
+            <p className="text-xs text-gray-400">On Track</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
+            <h2 className="text-xl font-medium">6</h2>
+            <p className="text-xs text-gray-400">Need Attention</p>
+        </div>
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
+            <h2 className="text-xl font-medium">12</h2>
+            <p className="text-xs text-gray-400">Interaction This Month</p>
+        </div>
+        
+        
+
+      </div> 
+
+      <hr className="max-w-6xl mx-auto opacity-10 mb-7"/>
+
+
       <div className="max-w-6xl mx-auto">
 
         <h2 className="text-xl font-bold text-gray-800 mb-6">

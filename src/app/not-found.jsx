@@ -2,6 +2,10 @@
 
 import { useRouter } from "next/navigation";
 
+export const metadata = {
+  title: "404 Not Found",
+};
+
 const NotFound = () => {
   const router = useRouter();
 

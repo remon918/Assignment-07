@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Keenkeeper | Home",
+};
+
 const statusColor = {
   "On-Track": "bg-green-800 text-white",
   Overdue: "bg-red-500 text-white",

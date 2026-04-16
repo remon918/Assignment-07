@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const statusColor = {
-  "On-Track": "bg-green-100 text-green-700",
-  Overdue: "bg-red-100 text-red-600",
-  "Almost Due": "bg-yellow-100 text-yellow-700",
+  "On-Track": "bg-green-800 text-white",
+  Overdue: "bg-red-500 text-white",
+  "Almost Due": "bg-yellow-500 text-white",
   Family: "bg-purple-100 text-purple-700",
   Work: "bg-blue-100 text-blue-700",
   Hobby: "bg-orange-100 text-orange-700",
@@ -30,11 +30,11 @@ const Friend = () => {
           <p className="text-xs text-gray-400">Total Friends</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-          <h2 className="text-xl font-medium">3</h2>
+          <h2 className="text-xl font-medium">{friends.filter((f) => f.status === "On-Track").length}</h2>
           <p className="text-xs text-gray-400">On Track</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-          <h2 className="text-xl font-medium">6</h2>
+          <h2 className="text-xl font-medium">{friends.filter((f) => f.status === "Overdue").length}</h2>
           <p className="text-xs text-gray-400">Need Attention</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">

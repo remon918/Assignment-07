@@ -9,10 +9,13 @@ import { BiMessageDots } from "react-icons/bi";
 import { toast } from "react-toastify";
 
 const statusColorMap = {
-  "On-Track": { bg: "bg-teal-100", text: "text-white" },
+  "On-Track": { bg: "bg-teal-700", text: "text-white" },
   Overdue: { bg: "bg-red-500", text: "text-white" },
-  "Almost Due": { bg: "bg-yellow-100", text: "text-yellow-700" },
+  "Almost Due": { bg: "bg-yellow-500", text: "text-white" },
   FAMILY: { bg: "bg-green-100", text: "text-green-700" },
+  Work: { bg: "bg-blue-100 ", text: "text-blue-700" },
+  Hobby: { bg: "bg-orange-100", text: "text-orange-700" },
+  Travel: { bg: "bg-teal-100", text: "text-teal-700" },
   default: { bg: "bg-gray-100", text: "text-gray-700" },
 };
 
@@ -91,6 +94,9 @@ const FriendDetails = ({ params }) => {
   };
   const mainStatus = statusColorMap[friend.status] || statusColorMap["default"];
   const familyTag = statusColorMap["FAMILY"];
+  const workTag = statusColorMap["Work"];
+  const hobbyTag = statusColorMap["Hobby"];
+  const travelTag = statusColorMap["Travel"];
 
   return (
     <div className="min-h-screen bg-gray-50 p-6 md:p-10 font-sans">
@@ -121,6 +127,27 @@ const FriendDetails = ({ params }) => {
                   className={`px-4 py-0.5 text-xs font-semibold rounded-full ${familyTag.bg} ${familyTag.text}`}
                 >
                   FAMILY
+                </span>
+              )}
+              {friend.tags?.includes("Work") && (
+                <span
+                  className={`px-4 py-0.5 text-xs font-semibold rounded-full ${workTag.bg} ${workTag.text}`}
+                >
+                  WORK
+                </span>
+              )}
+              {friend.tags?.includes("Hobby") && (
+                <span
+                  className={`px-4 py-0.5 text-xs font-semibold rounded-full ${hobbyTag.bg} ${hobbyTag.text}`}
+                >
+                  HOBBY
+                </span>
+              )}
+              {friend.tags?.includes("Travel") && (
+                <span
+                  className={`px-4 py-0.5 text-xs font-semibold rounded-full ${travelTag.bg} ${travelTag.text}`}
+                >
+                  TRAVEL
                 </span>
               )}
             </div>

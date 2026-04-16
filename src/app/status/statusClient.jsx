@@ -1,11 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from "recharts";
 
 const COLORS = {
   Call: "#1a3a2a",
   Text: "#9b59d0",
   Video: "#2ecc71",
+};
+
+const getEvents = () => {
+  if (typeof window === "undefined") return [];
+  return JSON.parse(localStorage.getItem("checkInEvents") || "[]");
 };
 
 const CustomLegend = ({ data }) => (
@@ -23,10 +28,7 @@ const CustomLegend = ({ data }) => (
 );
 
 const StatusClient = () => {
-  const [events] = useState(() => {
-    if (typeof window === "undefined") return [];
-    return JSON.parse(localStorage.getItem("checkInEvents") || "[]");
-  });
+  const events = getEvents();
 
   const counts = events.reduce((acc, e) => {
     acc[e.method] = (acc[e.method] || 0) + 1;

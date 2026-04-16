@@ -85,7 +85,7 @@ const FriendDetails = ({ params }) => {
 
       if (actionLabel === "Call" || actionLabel === "Video") {
         toast(
-          `You are interacting with ${friendName} via ongoing ${actionLabel}!`,
+          `You are interacting with ${friendName} via ongoing ${actionLabel}!.`,
         );
       } else {
         toast(`You and ${friendName} are in text conversation!`);

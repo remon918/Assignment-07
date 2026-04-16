@@ -8,10 +8,6 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { BiMessageDots } from "react-icons/bi";
 import { toast } from "react-toastify";
 
-export const metadata = {
-  title: "Keenkeeper | Friend Details",
-};
-
 const statusColorMap = {
   "On-Track": { bg: "bg-teal-700", text: "text-white" },
   Overdue: { bg: "bg-red-500", text: "text-white" },

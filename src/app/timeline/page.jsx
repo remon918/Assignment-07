@@ -5,10 +5,6 @@ import Image from "next/image";
 import text from "@/asset/img/text.png";
 import video from "@/asset/img/video.png";
 
-export const metadata = {
-  title: "Keenkeeper | Timeline",
-};
-
 const methodIcons = {
   Call: <Image src={call} alt="Call Icon" width={25} height={25} />,
   Text: <Image src={text} alt="Text Icon" width={25} height={25} />,

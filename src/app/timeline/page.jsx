@@ -11,11 +11,11 @@ const methodIcons = {
   Video: <Image src={video} alt="Video Icon" width={25} height={25} />,
 };
 
-
 const TimelinePage = () => {
   const [filter, setFilter] = useState("All");
 
   const [events, setEvents] = useState(() => {
+    console.log(setEvents)
     if (typeof window === "undefined") return [];
     return JSON.parse(localStorage.getItem("checkInEvents") || "[]");
   });
@@ -54,11 +54,7 @@ const TimelinePage = () => {
               key={event.id}
               className="bg-white border border-gray-100 rounded-xl px-5 py-4 flex items-center gap-4 shadow-sm"
             >
-              <div
-                className=""
-              >
-                {methodIcons[event.method]}
-              </div>
+              <div className="">{methodIcons[event.method]}</div>
 
               <div className="flex flex-col gap-0.5">
                 <p className="text-sm font-semibold text-gray-800">
@@ -82,6 +78,6 @@ const TimelinePage = () => {
       </div>
     </div>
   );
-}
+};
 
-export default TimelinePage
+export default TimelinePage;

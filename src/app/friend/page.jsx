@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const statusColor = {
   "On-Track": "bg-green-100 text-green-700",
-  "Overdue": "bg-red-100 text-red-600",
+  Overdue: "bg-red-100 text-red-600",
   "Almost Due": "bg-yellow-100 text-yellow-700",
-  "Family": "bg-purple-100 text-purple-700",
-  "Work": "bg-blue-100 text-blue-700",
-  "Hobby": "bg-orange-100 text-orange-700",
-  "Travel": "bg-teal-100 text-teal-700",
+  Family: "bg-purple-100 text-purple-700",
+  Work: "bg-blue-100 text-blue-700",
+  Hobby: "bg-orange-100 text-orange-700",
+  Travel: "bg-teal-100 text-teal-700",
 };
 
 const Friend = () => {
@@ -24,37 +24,29 @@ const Friend = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
-
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-            <h2 className="text-xl font-medium">{friends.length}</h2>
-            <p className="text-xs text-gray-400">Total Friends</p>
+          <h2 className="text-xl font-medium">{friends.length}</h2>
+          <p className="text-xs text-gray-400">Total Friends</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-            <h2 className="text-xl font-medium">3</h2>
-            <p className="text-xs text-gray-400">On Track</p>
+          <h2 className="text-xl font-medium">3</h2>
+          <p className="text-xs text-gray-400">On Track</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-            <h2 className="text-xl font-medium">6</h2>
-            <p className="text-xs text-gray-400">Need Attention</p>
+          <h2 className="text-xl font-medium">6</h2>
+          <p className="text-xs text-gray-400">Need Attention</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-            <h2 className="text-xl font-medium">12</h2>
-            <p className="text-xs text-gray-400">Interaction This Month</p>
+          <h2 className="text-xl font-medium">12</h2>
+          <p className="text-xs text-gray-400">Interaction This Month</p>
         </div>
-        
-        
+      </div>
 
-      </div> 
-
-      <hr className="max-w-6xl mx-auto opacity-10 mb-7"/>
-
+      <hr className="max-w-6xl mx-auto opacity-10 mb-7" />
 
       <div className="max-w-6xl mx-auto">
-
-        <h2 className="text-xl font-bold text-gray-800 mb-6">
-          Your Friends
-        </h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-6">Your Friends</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {friends.map((friend) => (
@@ -75,9 +67,7 @@ const Friend = () => {
                 {friend.name}
               </h3>
 
-              <p className="text-xs text-gray-400">
-                {friend.lastContact}
-              </p>
+              <p className="text-xs text-gray-400">{friend.lastContact}</p>
 
               <div className="flex flex-wrap justify-center gap-1 mt-1">
                 {friend.tags?.map((tag) => (

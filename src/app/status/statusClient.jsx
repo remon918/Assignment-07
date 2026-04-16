@@ -1,12 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from "recharts";
 
 const COLORS = {
   Call: "#1a3a2a",
@@ -39,15 +33,22 @@ const StatusClient = () => {
     return acc;
   }, {});
 
-  const chartData = Object.entries(counts).map(([name, value]) => ({ name, value }));
+  const chartData = Object.entries(counts).map(([name, value]) => ({
+    name,
+    value,
+  }));
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Friendship Analytics</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">
+          Friendship Analytics
+        </h1>
 
         <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-6">
-          <p className="text-sm font-medium text-gray-500 mb-4">By Interaction Type</p>
+          <p className="text-sm font-medium text-gray-500 mb-4">
+            By Interaction Type
+          </p>
 
           {chartData.length === 0 ? (
             <div className="flex items-center justify-center h-48 text-gray-400 text-sm">
@@ -67,7 +68,10 @@ const StatusClient = () => {
                     dataKey="value"
                   >
                     {chartData.map((entry) => (
-                      <Cell key={entry.name} fill={COLORS[entry.name] || "#ccc"} />
+                      <Cell
+                        key={entry.name}
+                        fill={COLORS[entry.name] || "#ccc"}
+                      />
                     ))}
                   </Pie>
                   <Tooltip

@@ -1,6 +1,5 @@
 import StatusClient from "./statusClient";
 
-
 export const metadata = {
   title: "Keenkeeper | Status",
 };

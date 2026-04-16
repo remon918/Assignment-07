@@ -15,11 +15,15 @@ const statusColor = {
 
 const Friend = () => {
   const [friends, setFriends] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
-      .then((data) => setFriends(data));
+      .then((data) => {
+        setFriends(data);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -30,11 +34,15 @@ const Friend = () => {
           <p className="text-xs text-gray-400">Total Friends</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-          <h2 className="text-xl font-medium">{friends.filter((f) => f.status === "On-Track").length}</h2>
+          <h2 className="text-xl font-medium">
+            {friends.filter((f) => f.status === "On-Track").length}
+          </h2>
           <p className="text-xs text-gray-400">On Track</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
-          <h2 className="text-xl font-medium">{friends.filter((f) => f.status === "Overdue").length}</h2>
+          <h2 className="text-xl font-medium">
+            {friends.filter((f) => f.status === "Overdue").length}
+          </h2>
           <p className="text-xs text-gray-400">Need Attention</p>
         </div>
         <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2">
@@ -48,46 +56,60 @@ const Friend = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-xl font-bold text-gray-800 mb-6">Your Friends</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {friends.map((friend) => (
-            <Link
-              key={friend.id}
-              href={`/friend/${friend.id}`}
-              className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2 hover:shadow-md transition cursor-pointer"
-            >
-              <Image
-                src={friend.avatar}
-                alt={friend.name}
-                height={64}
-                width={64}
-                className=" rounded-full object-cover"
-              />
-
-              <h3 className="text-sm font-semibold text-gray-900">
-                {friend.name}
-              </h3>
-
-              <p className="text-xs text-gray-400">{friend.lastContact}</p>
-
-              <div className="flex flex-wrap justify-center gap-1 mt-1">
-                {friend.tags?.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`px-2 py-0.5 text-xs font-medium rounded-full ${statusColor[tag]}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <span
-                className={`mt-2 px-3 py-0.5 text-xs font-semibold rounded-full ${statusColor[friend.status]}`}
+        {loading ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-3 animate-pulse"
               >
-                {friend.status}
-              </span>
-            </Link>
-          ))}
-        </div>
+                <div className="flex flex-col items-center justify-center py-24 gap-4">
+                  <div className="w-10 h-10 border-4 border-gray-200 border-t-teal-600 rounded-full animate-spin" />
+                  <p className="text-sm text-gray-400 font-medium">
+                    Loading friends...
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {friends.map((friend) => (
+              <Link
+                key={friend.id}
+                href={`/friend/${friend.id}`}
+                className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 flex flex-col items-center gap-2 hover:shadow-md transition cursor-pointer"
+              >
+                <Image
+                  src={friend.avatar}
+                  alt={friend.name}
+                  height={64}
+                  width={64}
+                  className="rounded-full object-cover"
+                />
+                <h3 className="text-sm font-semibold text-gray-900">
+                  {friend.name}
+                </h3>
+                <p className="text-xs text-gray-400">{friend.lastContact}</p>
+                <div className="flex flex-wrap justify-center gap-1 mt-1">
+                  {friend.tags?.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`px-2 py-0.5 text-xs font-medium rounded-full ${statusColor[tag]}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <span
+                  className={`mt-2 px-3 py-0.5 text-xs font-semibold rounded-full ${statusColor[friend.status]}`}
+                >
+                  {friend.status}
+                </span>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -164,7 +164,7 @@ const handleQuickCheckIn = (actionLabel, friendName) => {
                     Connect every <strong className="text-teal-900 font-bold">{friend.possibleConnectTime} days</strong>
                 </p>
             </div>
-            <button className="bg-white hover:bg-gray-100 border border-gray-200 text-sm font-semibold text-gray-800 px-5 py-2 rounded-lg transition">
+            <button className="bg-white hover:bg-gray-100 border border-gray-200 text-sm font-semibold text-gray-800 px-5 py-2 rounded-lg transition cursor-pointer">
                 Edit
             </button>
           </div>

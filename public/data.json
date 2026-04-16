@@ -7,7 +7,7 @@
     "tags": ["Work"],
     "status": "Almost Due",
     "goal": "2d",
-    "nextDue": "Friday",
+    "nextDue": "May 8, 2026",
     "possibleConnectTime": "12d",
     "preferredContact": "email",
     "friendIdentity": "David Kim from Harvard University studies in Astronomy, we met first in Dhaka."
@@ -20,7 +20,7 @@
     "tags": ["Family"],
     "status": "Overdue",
     "goal": "3d",
-    "nextDue": "Sunday",
+    "nextDue": "June 20, 2026",
     "possibleConnectTime": "25d",
     "preferredContact": "phone",
     "friendIdentity": "Emma Wilson from Oxford University studies in Physics, we met first in Rajshahi."
@@ -33,7 +33,7 @@
     "tags": ["Work"],
     "status": "Overdue",
     "goal": "4d",
-    "nextDue": "Wednesday",
+    "nextDue": "July 3, 2026",
     "possibleConnectTime": "40d",
     "preferredContact": "instagram",
     "friendIdentity": "Lisa Nakamura from BUET studies in CSE, we met first in Chottogram."
@@ -46,7 +46,7 @@
     "tags": ["Hobby", "Travel"],
     "status": "Overdue",
     "goal": "5d",
-    "nextDue": "Monday",
+    "nextDue": "May 25, 2026",
     "possibleConnectTime": "60d",
     "preferredContact": "facebook",
     "friendIdentity": "James Wright from RUET studies in EEE, we met first in Khulna."
@@ -59,7 +59,7 @@
     "tags": ["Work"],
     "status": "Overdue",
     "goal": "2d",
-    "nextDue": "Tuesday",
+    "nextDue": "June 5, 2026",
     "possibleConnectTime": "18d",
     "preferredContact": "whatsapp",
     "friendIdentity": "David Kim from North South University studies in English, we met first in Cumilla."
@@ -72,7 +72,7 @@
     "tags": ["Family"],
     "status": "On-Track",
     "goal": "3d",
-    "nextDue": "Thursday",
+    "nextDue": "July 18, 2026",
     "possibleConnectTime": "30d",
     "preferredContact": "linkedin",
     "friendIdentity": "Emma Wilson from AIUB studies in Microbiology, we met first in Rajbari."
@@ -85,7 +85,7 @@
     "tags": ["Work"],
     "status": "On-Track",
     "goal": "4d",
-    "nextDue": "Saturday",
+    "nextDue": "May 30, 2026",
     "possibleConnectTime": "55d",
     "preferredContact": "freefire",
     "friendIdentity": "Lisa Nakamura from University of Chittagong studies in Physics, we met first in Kushtia."
@@ -98,7 +98,7 @@
     "tags": ["Hobby", "Travel"],
     "status": "Almost Due",
     "goal": "5d",
-    "nextDue": "Friday",
+    "nextDue": "June 12, 2026",
     "possibleConnectTime": "22d",
     "preferredContact": "email",
     "friendIdentity": "James Wright from Harvard University studies in CSE, we met first in London."
@@ -111,7 +111,7 @@
     "tags": ["Work"],
     "status": "Almost Due",
     "goal": "2d",
-    "nextDue": "Sunday",
+    "nextDue": "July 7, 2026",
     "possibleConnectTime": "35d",
     "preferredContact": "phone",
     "friendIdentity": "David Kim from Oxford University studies in EEE, we met first in New York."
@@ -124,7 +124,7 @@
     "tags": ["Family"],
     "status": "Overdue",
     "goal": "3d",
-    "nextDue": "Wednesday",
+    "nextDue": "May 14, 2026",
     "possibleConnectTime": "48d",
     "preferredContact": "instagram",
     "friendIdentity": "Emma Wilson from BUET studies in Astronomy, we met first in Dhaka."
@@ -137,7 +137,7 @@
     "tags": ["Work"],
     "status": "Overdue",
     "goal": "4d",
-    "nextDue": "Monday",
+    "nextDue": "June 28, 2026",
     "possibleConnectTime": "65d",
     "preferredContact": "facebook",
     "friendIdentity": "Lisa Nakamura from RUET studies in English, we met first in Rajshahi."
@@ -150,7 +150,7 @@
     "tags": ["Hobby", "Travel"],
     "status": "On-Track",
     "goal": "5d",
-    "nextDue": "Thursday",
+    "nextDue": "July 25, 2026",
     "possibleConnectTime": "28d",
     "preferredContact": "whatsapp",
     "friendIdentity": "James Wright from North South University studies in Microbiology, we met first in Chottogram."

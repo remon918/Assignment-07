@@ -1,15 +1,12 @@
-import React from 'react';
+import StatusClient from "./statusClient";
+
 
 export const metadata = {
-  title: "Keenkeeper | Status"
+  title: "Keenkeeper | Status",
 };
 
 const StatusPage = () => {
-    return (
-        <div>
-            <h2>this is the Home StatusPage</h2>
-        </div>
-    );
+  return <StatusClient />;
 };
 
 export default StatusPage;

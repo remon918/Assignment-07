@@ -1,9 +1,10 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChartLine } from "react-icons/fa";
 import { IoHomeOutline, IoTimerOutline } from "react-icons/io5";
+import logo from "@/asset/img/logo.png";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -22,7 +23,7 @@ const Navbar = () => {
           href="/"
           className="text-xl font-semibold text-gray-900 tracking-tight select-none"
         >
-          <span className="font-bold text-[#244D3F]">Keen</span>Keeper
+          <Image src={logo} alt="Keenkeeper Logo" height={100} width={100} className="mr-2" />
         </Link>
 
         {/* Nav Links */}

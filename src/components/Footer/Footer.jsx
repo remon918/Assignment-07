@@ -1,4 +1,8 @@
+import Image from "next/image";
 import React from "react";
+import ig from "@/asset/img/instagram.png";
+import twitter from "@/asset/img/twitter.png";
+import facebook from "@/asset/img/facebook.png";
 
 const Footer = () => {
   return (
@@ -15,15 +19,12 @@ const Footer = () => {
 
         {/* Social Links */}
         <div className="flex items-center gap-4">
-          <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-black text-sm cursor-pointer">
-            G
-          </div>
-          <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-black text-sm cursor-pointer">
-            f
-          </div>
-          <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-black text-sm cursor-pointer">
-            X
-          </div>
+          <Image src={ig} alt="Instagram" width={32} height={32} className="cursor-pointer"/>
+
+          <Image src={twitter} alt="Twitter" width={32} height={32} className="cursor-pointer"/>
+
+          <Image src={facebook} alt="Facebook" width={32} height={32} className="cursor-pointer"/>
+          
         </div>
 
         {/* Bottom Section */}

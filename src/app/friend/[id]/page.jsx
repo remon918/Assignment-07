@@ -57,17 +57,26 @@ const FriendDetails = ({ params }) => {
     );
   }
 
-  const handleQuickCheckIn = (actionLabel, friendName) => {
-    if(actionLabel === "Call" || actionLabel === "Video"){
-        toast(`You are interacting with ${friendName} via ongoing ${actionLabel}!`);
-    }else if(actionLabel === "Text"){
-        toast(`You and ${friendName} are in text conversation!`);
+const handleQuickCheckIn = (actionLabel, friendName) => {
+  if (actionLabel === "Call" || actionLabel === "Video" || actionLabel === "Text") {
+    if (typeof window !== "undefined") {
+      const existing = JSON.parse(localStorage.getItem("checkInEvents") || "[]");
+      const newEvent = {
+        id: crypto.randomUUID(),
+        friendName,
+        method: actionLabel,
+        date: new Date().toISOString(),
+      };
+      localStorage.setItem("checkInEvents", JSON.stringify([newEvent, ...existing]));
     }
-    else{
-        return
-    }
-  };
 
+    if (actionLabel === "Call" || actionLabel === "Video") {
+      toast(`You are interacting with ${friendName} via ongoing ${actionLabel}!`);
+    } else {
+      toast(`You and ${friendName} are in text conversation!`);
+    }
+  }
+};
   const mainStatus = statusColorMap[friend.status] || statusColorMap["default"];
   const familyTag = statusColorMap["FAMILY"];
 
@@ -110,15 +119,15 @@ const FriendDetails = ({ params }) => {
                 </p>
             </div>
             <div className="w-full space-y-2 mt-4">
-                <button className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-100 hover:bg-gray-100 py-3 rounded-lg text-sm font-semibold text-gray-800 transition">
+                <button className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-100 hover:bg-gray-100 py-3 rounded-lg text-sm font-semibold text-gray-800 transition cursor-pointer">
                     <PiBellSimpleZ />
                     Snooze 2 Weeks
                 </button>
-                <button className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-100 hover:bg-gray-100 py-3 rounded-lg text-sm font-semibold text-gray-800 transition">
+                <button className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-100 hover:bg-gray-100 py-3 rounded-lg text-sm font-semibold text-gray-800 transition cursor-pointer">
                     <IoTrashBinOutline />
                     Archive
                 </button>
-                <button className="w-full flex items-center justify-center gap-2 bg-white hover:bg-red-50 py-3 rounded-lg text-sm font-semibold text-red-600 transition">
+                <button className="w-full flex items-center justify-center gap-2 bg-white hover:bg-red-50 py-3 rounded-lg text-sm font-semibold text-red-600 transition cursor-pointer">
                     <RiDeleteBin6Line />
                     Delete
                 </button>
@@ -167,7 +176,7 @@ const FriendDetails = ({ params }) => {
                     <button
                         key={method.id}
                         onClick={() => handleQuickCheckIn(method.label, friend.name)}
-                        className="bg-gray-50 hover:bg-gray-100 border border-gray-100 rounded-xl p-8 flex flex-col items-center justify-center gap-3 transition"
+                        className="bg-gray-50 hover:bg-gray-100 border border-gray-100 rounded-xl p-8 flex flex-col items-center justify-center gap-3 transition cursor-pointer"
                     >
                         {method.icon({ className: "w-8 h-8 text-teal-900" })}
                         <span className="text-sm font-semibold text-teal-950">
